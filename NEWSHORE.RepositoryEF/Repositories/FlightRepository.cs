@@ -81,7 +81,11 @@ namespace NEWSHORE.RepositoryEF.Repositories
                     journey.Flights.AddRange(Scales(flight, GoFlight));
                     break;
             }
-
+            if (flight.Scales!= 0 && (journey.Flights.Sum(c=>c.Length)>flight.Scales))
+            {
+                journey.Flights = new List<FlightDTO[]>();
+                return journey;
+            }
 
             price += journey.Flights.Sum(c => c.Sum(c => c.Price));
             journey.Price = !string.IsNullOrEmpty(flight.Currency) && flight.Currency != "" && flight.Currency != "USD" ? await currenryService.Get(price, flight.Currency) : price;
