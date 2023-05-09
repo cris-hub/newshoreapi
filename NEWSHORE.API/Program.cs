@@ -10,6 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNewShoreDependencies(builder.Configuration);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddConsole();
+});
 
 builder.Services.AddCors(option =>
 {
