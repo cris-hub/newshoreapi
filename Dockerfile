@@ -6,5 +6,8 @@ RUN dotnet publish -c Release  -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
+
 COPY --from=build /app .
-CMD ASPNETCORE_URLS=http://*:$PORT dotnet NEWSHORE.API.dll
+
+ENV ASPNETCORE_URLS http://*:$PORT
+ENTRYPOINT ["dotnet","NEWSHORE.API.dll"]
