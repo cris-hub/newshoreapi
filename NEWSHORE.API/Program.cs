@@ -29,14 +29,11 @@ var app = builder.Build();
 // }
 
 app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwaggerUI();
 app.UseMiddleware<ExceptionMiddleware>();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthentication();
 app.UseCors("CorsPolicy");
 app.MapControllers();
-app.UseDefaultFiles();
-app.UseStaticFiles();
 
 app.Run();
