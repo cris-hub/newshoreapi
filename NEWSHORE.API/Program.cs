@@ -42,6 +42,8 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 //app.UseAuthentication();
 app.UseCors("CorsPolicy");
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();

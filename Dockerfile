@@ -10,4 +10,6 @@ WORKDIR /app
 COPY --from=build /app .
 
 ENV ASPNETCORE_URLS http://*:$PORT
+EXPOSE 80
+EXPOSE 443
 ENTRYPOINT ["dotnet","NEWSHORE.API.dll"]
