@@ -42,6 +42,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 //app.UseAuthentication();
 app.UseCors("CorsPolicy");
+app.UseHttpsRedirection();
 app.MapControllers();
 
 app.Run();
