@@ -19,6 +19,7 @@ git clone https://github.com/cris-hub/newshoreapi.git
 cd back-end
 dotnet restore
 dotnet build
+
   
 ```
 
