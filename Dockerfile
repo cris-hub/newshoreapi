@@ -7,6 +7,9 @@ RUN dotnet publish -c Release  -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
 
+EXPOSE 443
+EXPOSE 80
+
 COPY --from=build /app .
 
 RUN echo "ASPNETCORE_URLS=http://0.0.0.0:\$PORT\nDOTNET_RUNNING_IN_CONTAINER=true" > /app/setup_heroku_env.sh && chmod +x /app/setup_heroku_env.sh
