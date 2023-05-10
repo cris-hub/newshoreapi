@@ -11,13 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNewShoreDependencies(builder.Configuration);
 builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
-
-builder.Host.ConfigureLogging(logging =>
-{
-    logging.ClearProviders();
-    logging.AddConsole();
-});
+;
 
 builder.Services.AddCors(option =>
 {
@@ -39,11 +33,11 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseMiddleware<ExceptionMiddleware>();
+app.UseAuthentication();
+app.UseAuthorization();
 
 //app.UseAuthentication();
 app.UseCors("CorsPolicy");
-app.UseDefaultFiles();
-app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();
