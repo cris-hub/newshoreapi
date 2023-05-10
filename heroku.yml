@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: ASPNETCORE_URLS=http://*:$PORT dotnet IronHook.Web.dll
+  web: dotnet NEWSHORE.API.dll
