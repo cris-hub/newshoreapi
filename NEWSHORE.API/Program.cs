@@ -35,7 +35,7 @@ app.UseSwaggerUI();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseHttpsRedirection();
 //app.UseAuthentication();
 app.UseCors("CorsPolicy");
 app.MapControllers();
