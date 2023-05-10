@@ -2,7 +2,8 @@ using NEWSHORE.API.Middleware;
 using NEWSHORE.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -10,8 +11,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNewShoreDependencies(builder.Configuration);
-builder.Logging.ClearProviders();
-
 
 
 builder.Services.AddCors(option =>

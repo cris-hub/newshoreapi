@@ -2,4 +2,4 @@ build:
   docker:
     newshore: Dockerfile
 run:
-  newshore: dotnet NEWSHORE.API.dll
+  newshore: ASPNETCORE_URLS=http://*:$PORT dotnet NEWSHORE.API.dll

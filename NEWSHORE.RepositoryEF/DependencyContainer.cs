@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using NEWSHORE.Entities.Interfaces;
 using NEWSHORE.RepositoryEF.Repositories;
 
@@ -10,7 +8,7 @@ namespace NEWSHORE.RepositoryEF
 {
     public static class DependencyContainer
     {
-        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddRepositories(this IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
 
             services.AddScoped<IFlightRepository, FlightRepository>();
