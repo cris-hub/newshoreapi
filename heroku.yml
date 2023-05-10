@@ -1,3 +1,5 @@
 build:
   docker:
     newshore: Dockerfile
+run:
+  newshore: dotnet NEWSHORE.API.dll
