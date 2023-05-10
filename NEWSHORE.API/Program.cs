@@ -13,7 +13,6 @@ builder.Services.AddNewShoreDependencies(builder.Configuration);
 builder.Logging.ClearProviders();
 
 
-builder.WebHost.UseUrls("http://*:80;https://*:5000");
 
 builder.Services.AddCors(option =>
 {
@@ -41,6 +40,6 @@ app.UseHttpsRedirection();
 //app.UseAuthentication();
 app.UseCors("CorsPolicy");
 app.MapControllers();
-app.MapGet("/", () => "Hello World!");
+
 
 app.Run();
