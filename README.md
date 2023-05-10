@@ -3,7 +3,11 @@
 ## Newshore Prueba Ingreso Fullstack 2022
 
 
-
+# DEMO
+## Swagger
+https://newshoreairapi.azurewebsites.net/swagger/index.html
+## WEB
+https://cris-hub.github.io/newshoreweb.github.io
 
 
 
