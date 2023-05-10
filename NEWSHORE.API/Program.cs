@@ -11,7 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNewShoreDependencies(builder.Configuration);
 builder.Logging.ClearProviders();
-;
+
+
+builder.WebHost.UseUrls("http://*:80;https://*:5000");
 
 builder.Services.AddCors(option =>
 {
